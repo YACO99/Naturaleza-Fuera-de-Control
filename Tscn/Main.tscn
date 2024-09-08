@@ -1,0 +1,293 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6elro4mmkbs"]
+
+[ext_resource type="Script" path="res://Code/Main.cs" id="1_tq8ew"]
+[ext_resource type="Texture2D" uid="uid://c4scwyhqnljgw" path="res://icon.svg" id="2_sewsa"]
+[ext_resource type="Texture2D" uid="uid://duylo12qecg2x" path="res://TEMP.PNG" id="2_y2lbb"]
+[ext_resource type="AudioStream" uid="uid://dujth1k1t8g0b" path="res://loop.wav" id="4_6lqas"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_tq8ew")
+
+[node name="Fondo" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y2lbb")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42
+anchor_top = 0.476
+anchor_right = 0.58
+anchor_bottom = 0.524
+offset_left = 0.159973
+offset_top = 0.052002
+offset_right = -0.160034
+offset_bottom = -0.052002
+grow_horizontal = 2
+grow_vertical = 2
+text = "Iniciar Partida"
+
+[node name="Game" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" type="Panel" parent="Game"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.753
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0559998
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 160)
+
+[node name="Bar" type="HBoxContainer" parent="Game/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="axiones" type="VBoxContainer" parent="Game/Player/Bar"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Game/Player/Bar/axiones"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "Acciones"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game/Player/Bar/axiones"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Talar" type="VBoxContainer" parent="Game/Player/Bar/axiones/HBoxContainer"]
+layout_mode = 2
+
+[node name="TalarUp" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Talar"]
+visible = false
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+text = "Up Lvl"
+
+[node name="Talar" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Talar"]
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Talar
+Arboles"
+
+[node name="Quemar" type="VBoxContainer" parent="Game/Player/Bar/axiones/HBoxContainer"]
+layout_mode = 2
+
+[node name="QuemarUp" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Quemar"]
+visible = false
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+text = "Up Lvl"
+
+[node name="Quemar" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Quemar"]
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quemar
+Arbole"
+
+[node name="Criar" type="VBoxContainer" parent="Game/Player/Bar/axiones/HBoxContainer"]
+layout_mode = 2
+
+[node name="CriarUp" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Criar"]
+visible = false
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+text = "Up Lvl"
+
+[node name="Criar" type="Button" parent="Game/Player/Bar/axiones/HBoxContainer/Criar"]
+modulate = Color(0, 0.623529, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Criar
+Humanos"
+
+[node name="Label3" type="Label" parent="Game/Player/Bar/axiones"]
+visible = false
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "Potencia %
+"
+horizontal_alignment = 1
+
+[node name="PobActiva" type="SpinBox" parent="Game/Player/Bar/axiones"]
+visible = false
+layout_mode = 2
+min_value = 50.0
+value = 75.0
+
+[node name="PowerUps" type="HBoxContainer" parent="Game/Player/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PowrUp" type="TextureButton" parent="Game/Player/Bar/PowerUps"]
+layout_mode = 2
+texture_normal = ExtResource("2_sewsa")
+stretch_mode = 5
+
+[node name="Container" type="VBoxContainer" parent="Game/Player/Bar"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Game/Player/Bar/Container"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Pausa" type="Button" parent="Game/Player/Bar/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pausa"
+
+[node name="Rendir" type="Button" parent="Game/Player/Bar/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Me Rindo"
+
+[node name="Rec" type="Panel" parent="Game"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.185
+anchor_bottom = 0.753
+offset_right = 6.88
+offset_bottom = 0.0559998
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/Rec"]
+clip_contents = true
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="Game/Rec/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Recursos
+"
+horizontal_alignment = 1
+
+[node name="Compac" type="Button" parent="Game/Rec/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="Rec1" type="Label" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+text = "CO2 1000
+"
+horizontal_alignment = 3
+
+[node name="Data1" type="Label" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+text = "Arboles 100"
+horizontal_alignment = 3
+
+[node name="Rec3" type="Label" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+text = "Poblacion 125
+"
+horizontal_alignment = 3
+
+[node name="Rec2" type="Label" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+text = "Madera 10"
+horizontal_alignment = 3
+
+[node name="Label" type="Label" parent="Game/Rec/VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "Hstorial
+"
+horizontal_alignment = 1
+
+[node name="s" type="ScrollContainer" parent="Game/Rec/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="v" type="VBoxContainer" parent="Game/Rec/VBoxContainer/s"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Historial" type="Label" parent="Game/Rec/VBoxContainer/s/v"]
+modulate = Color(0.481789, 0.481789, 0.481789, 1)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 3
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="Expand" type="Button" parent="Game"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.048
+offset_right = -0.432001
+offset_bottom = -0.104
+grow_horizontal = 0
+text = ">
+"
+
+[node name="www" type="HTTPRequest" parent="."]
+
+[node name="www01" type="HTTPRequest" parent="."]
+
+[node name="www02" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6lqas")
+volume_db = -6.0
+autoplay = true
+
+[node name="Comentario" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6lqas")
+autoplay = true
+
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Talar/TalarUp" to="." method="TUp"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Talar/Talar" to="." method="_on_talar_pressed"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Quemar/QuemarUp" to="." method="QUp"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Quemar/Quemar" to="." method="_on_quemar_pressed"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Criar/CriarUp" to="." method="CUp"]
+[connection signal="pressed" from="Game/Player/Bar/axiones/HBoxContainer/Criar/Criar" to="." method="_on_criar_pressed"]
+[connection signal="pressed" from="Game/Player/Bar/PowerUps/PowrUp" to="." method="PowerUp"]
+[connection signal="pressed" from="Game/Player/Bar/Container/Pausa" to="." method="_on_pausa_pressed"]
+[connection signal="pressed" from="Game/Player/Bar/Container/Rendir" to="." method="_on_rendir_pressed"]
+[connection signal="pressed" from="Game/Rec/VBoxContainer/HBoxContainer/Compac" to="." method="_on_compacRec_pressed"]
+[connection signal="pressed" from="Game/Expand" to="." method="_on_expandRec_pressed"]
+[connection signal="request_completed" from="www" to="." method="Resp"]
+[connection signal="request_completed" from="www01" to="." method="Resp01"]
+[connection signal="request_completed" from="www02" to="." method="Resp02"]
